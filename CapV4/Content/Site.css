@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color:white;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -15,7 +16,7 @@ select,
 textarea {
     max-width: 280px;
 }
-.navbar-brand{
+/*.navbar-brand{
     color:purple;
 }
 .navbar-inverse{
@@ -32,12 +33,12 @@ textarea {
     color:#777;
 }
 .navbar, .navbar.navbar-default {
-    background-color: rgba(63, 81, 181, 0);
+    background-color:purple;
     color: #fff;
 }
 .navbar{
-   background-color:rgba(63, 81, 181, 0);
-}
+   background-color:#eee;
+}*/
 .index-bg{
     background:url('../Images/1Creep.jpg');
     background-size:cover;
@@ -63,13 +64,13 @@ textarea {
     margin-top:-50px;
 }
 .video-bg{
-    background:url('../Images/3Creep.jpg');
+    /*background:url('../Images/3Creep.jpg');*/
     background-position:right bottom;
     background-size:cover;
     height:100vh;
 }
 .common-bg{
-    background:url('../Images/3Creep.jpg');
+    /*background:url('../Images/3Creep.jpg');*/
     background-size:cover;
     height:120vh;
 }
@@ -87,11 +88,11 @@ textarea {
     color:purple;
 }
 .advanced-search{
-    background-color:#eee;
+    /*background-color:#eee;*/
     box-shadow:rgba(0,0,0,0.4) 0px 0px 10px;
 }
 .job-search-page{
-    background:url('../Images/3Creep.jpg');
+    /*background:url('../Images/3Creep.jpg');*/
     background-size:cover;
 }
 

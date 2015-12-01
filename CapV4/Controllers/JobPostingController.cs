@@ -518,7 +518,7 @@ namespace CapV4.Controllers
                              select Recruiter.RecId).SingleOrDefault();
             if (verifyDisplay.Contains("true"))
             {
-                jobVisible = "true";
+                jobVisible = "Yes";
             }
          //   int compId = Convert.ToInt32(company);
 

@@ -9,12 +9,10 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    <link href="~/Content/bootstrap-material-design.min.css" rel="stylesheet" />
-    <link href="~/Content/ripples.min.css" rel="stylesheet" />
-
+    
 </head>
 <body>
-    <div class="navbar navbar-fixed-top">
+    <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -74,8 +72,10 @@
             }, 1500);
         });
     </script>
-        @RenderSection("scripts", required: false)
-    <script src="~/Scripts/material.min.js"></script>
+    @RenderSection("scripts", required: false)
     <script src="~/Scripts/ripples.min.js"></script>
+    <script src="~/Scripts/material.min.js"></script>  
+    <script>$.material.init()</script>
+    
 </body>
 </html>
