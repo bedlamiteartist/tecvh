@@ -1178,10 +1178,10 @@ output {
 
     .form-group.is-focused .form-control {
         outline: 0;
-        background-image: -webkit-gradient(linear,left top,left bottom,from(#009688),to(#009688)),-webkit-gradient(linear,left top,left bottom,from(#D2D2D2),to(#D2D2D2));
-        background-image: -webkit-linear-gradient(#009688,#009688),-webkit-linear-gradient(#D2D2D2,#D2D2D2);
-        background-image: -o-linear-gradient(#009688,#009688),-o-linear-gradient(#D2D2D2,#D2D2D2);
-        background-image: linear-gradient(#009688,#009688),linear-gradient(#D2D2D2,#D2D2D2);
+        background-image: -webkit-gradient(linear,left top,left bottom,from(#D95B43),to(#D95B43)),-webkit-gradient(linear,left top,left bottom,from(#D2D2D2),to(#D2D2D2));
+        background-image: -webkit-linear-gradient(#D95B43,#D95B43),-webkit-linear-gradient(#D2D2D2,#D2D2D2);
+        background-image: -o-linear-gradient(#D95B43,#D95B43),-o-linear-gradient(#D2D2D2,#D2D2D2);
+        background-image: linear-gradient(#D95B43,#D95B43),linear-gradient(#D2D2D2,#D2D2D2);
         -webkit-background-size: 100% 2px,100% 1px;
         background-size: 100% 2px,100% 1px;
         -webkit-box-shadow: none;
@@ -1192,11 +1192,11 @@ output {
     }
 
         .form-group.is-focused .form-control .material-input:after {
-            background-color: #009688;
+            background-color: #D95B43;
         }
 
     .form-group.is-focused label, .form-group.is-focused label.control-label {
-        color: #009688;
+        color: #D95B43;
     }
 
     .form-group.is-focused.label-placeholder label, .form-group.is-focused.label-placeholder label.control-label {

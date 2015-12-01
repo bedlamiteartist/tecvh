@@ -7,8 +7,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
+    
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    
     
 </head>
 <body>
@@ -74,8 +76,11 @@
     </script>
     @RenderSection("scripts", required: false)
     <script src="~/Scripts/ripples.min.js"></script>
-    <script src="~/Scripts/material.min.js"></script>  
+    <script src="~/Scripts/material.min.js"></script>
+    <script src="https://use.typekit.net/pgw1jal.js"></script>
+    <script>try { Typekit.load({ async: true }); } catch (e) { }</script>  
     <script>$.material.init()</script>
+    
     
 </body>
 </html>
