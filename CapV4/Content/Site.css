@@ -15,10 +15,6 @@ select,
 textarea {
     max-width: 280px;
 }
-.navbar{
-   background-color:rgba(63, 81, 181, 0);
-}
-
 .navbar-brand{
     color:purple;
 }
@@ -38,6 +34,9 @@ textarea {
 .navbar, .navbar.navbar-default {
     background-color: rgba(63, 81, 181, 0);
     color: #fff;
+}
+.navbar{
+   background-color:rgba(63, 81, 181, 0);
 }
 .index-bg{
     background:url('../Images/1Creep.jpg');
