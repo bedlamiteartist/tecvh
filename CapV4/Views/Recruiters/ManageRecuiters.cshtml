@@ -1,0 +1,56 @@
+﻿@model IEnumerable<CapModel.Recruiter>
+
+@{
+    ViewBag.Title = "ManageRecuiters";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ManageRecuiters</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Department)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JobTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HasAccess)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Company.CompName)
+        </th>*@
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Department)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JobTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HasAccess)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserName)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.Company.CompName)
+        </td>*@
+        <td>
+            @Html.ActionLink("Edit Access !", "EditRecruiters", new { id = item.RecId }) @*|
+            @Html.ActionLink("Delete", "Delete", new { id=item.RecId })*@
+        </td>
+    </tr>
+}
+
+</table>
+
+@Html.ActionLink("Back", "Index", "Companies")

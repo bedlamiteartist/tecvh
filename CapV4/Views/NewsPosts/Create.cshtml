@@ -1,0 +1,41 @@
+﻿@model CapModel.NewsPost
+@*Main Author Name: Jasmine Gill
+    Description of Page:Page to post a news item *@
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>NewsPost</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        @Html.Label("News Title: ")  &nbsp; @Html.TextBox("newstitle", "", new { placeholder = "Enter News Title", required = "required" }) &nbsp; &nbsp;
+        @Html.Label("Verify Company Name: ")  &nbsp; @Html.DropDownList("company", "Select Company")
+        <br /><br />
+        @Html.Label("Updated on: ")  &nbsp; @Html.TextBox("postingdate", "", new { @class = "form-control datepicker", required = "require d", type = "date" })&nbsp;
+        <br /><br />
+        @Html.Label("Description: ")  &nbsp; @Html.TextArea("newsdesciption", "", new { placeholder = "Enter Job Desciption..", required = "required" })
+        @Html.Label("Display on wall:") &nbsp; @Html.CheckBox("shownews")
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

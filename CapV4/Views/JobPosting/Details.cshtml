@@ -1,0 +1,187 @@
+﻿@model CapModel.JobPosting
+@*Main Author Name: Amandeep Brar
+    Description of Page:Display all details of selected job *@
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*@using (Html.BeginForm("Create", "JobApplieds", FormMethod.Get,  , new { id =  }))
+{*@
+    
+<div class="common-bg">
+    <div class="container">
+        <h2>Job Details</h2>    
+
+        <div>
+            <hr />
+            @Html.HiddenFor(model => model.JobPostId)
+            @*<div class="col-lg-3">*@
+            <span style="font-weight:bold; font-family: Times New Roman">
+                @Html.DisplayNameFor(model => model.JobTitle)
+            </span>
+            &nbsp;
+            @*<span style="border:1px solid black; padding: 3px">*@
+            @Html.DisplayFor(model => model.JobTitle)
+            @*</span>*@
+            &nbsp;  &nbsp;
+            <span style="font-weight:bold; font-family: Times New Roman">
+                @Html.DisplayNameFor(model => model.Company.CompName)
+            </span>  &nbsp;  &nbsp; &nbsp;
+            @*<span style="border:1px solid black; padding: 3px">*@
+            @Html.DisplayFor(model => model.Company.CompName)
+            @*</span>*@
+            <br /><br />
+            <span style="font-weight:bold; font-family: Times New Roman">
+                @Html.DisplayNameFor(model => model.PostStartDate)
+            </span>
+            &nbsp;
+            @*<span style="border:1px solid black; padding: 3px">*@
+            @Html.DisplayFor(model => model.PostStartDate)
+            @*</span>*@
+            &nbsp;  &nbsp;
+            <span style="font-weight:bold; font-family: Times New Roman">
+                @Html.DisplayNameFor(model => model.PostEndDate)
+            </span>
+            &nbsp;
+            @*<span style="border:1px solid black; padding: 3px">*@
+            @Html.DisplayFor(model => model.PostEndDate)
+            @*</span>*@
+            <br /><br />
+            <span style="font-weight:bold; font-family: Times New Roman">
+                @Html.DisplayNameFor(model => model.NumPositions)
+            </span>
+            &nbsp;
+            @*<span style="border:1px solid black; padding: 3px">*@
+            @Html.DisplayFor(model => model.NumPositions)
+            @*</span>*@ &nbsp;&nbsp;
+            <span style="font-weight:bold; font-family: Times New Roman">
+                @Html.DisplayNameFor(model => model.JobLevel)
+            </span>
+            &nbsp;
+            @*<span style="border:1px solid black; padding: 3px">*@
+            @Html.DisplayFor(model => model.JobLevel)
+            @*</span>*@
+            &nbsp; &nbsp;
+            <span style="font-weight:bold; font-family: Times New Roman">
+                @Html.DisplayNameFor(model => model.JobType)
+            </span>
+            &nbsp;
+            @*<span style="border:1px solid black; padding: 3px">*@
+            @Html.DisplayFor(model => model.JobType)
+            @*</span>*@
+            <hr />
+            <span style="font-weight:bold; font-family: Times New Roman">
+                @Html.DisplayNameFor(model => model.Location.AptNum)
+            </span>
+            &nbsp;
+            @*<span style="border:1px solid black; padding: 3px">*@
+            @Html.DisplayFor(model => model.Location.AptNum)
+            @*</span>*@
+            &nbsp;  &nbsp;
+            <span style="font-weight:bold; font-family: Times New Roman">
+                @Html.DisplayNameFor(model => model.Location.StreetAdd)
+            </span>
+            &nbsp;
+            @*<span style="border:1px solid black; padding: 3px">*@
+            @Html.DisplayFor(model => model.Location.StreetAdd)
+            @*</span>*@
+            &nbsp;  &nbsp;
+            <span style="font-weight:bold; font-family: Times New Roman">
+                @Html.DisplayNameFor(model => model.Location.City)
+            </span>
+            &nbsp;
+            @*<span style="border:1px solid black; padding: 3px">*@
+            @Html.DisplayFor(model => model.Location.City)
+            @*</span>*@
+            <br /><br />
+            <span style="font-weight:bold; font-family: Times New Roman">
+                @Html.DisplayNameFor(model => model.Location.Province)
+            </span>
+            &nbsp;
+            @*<span style="border:1px solid black; padding: 3px">*@
+            @Html.DisplayFor(model => model.Location.Province)
+            @*</span>*@
+            &nbsp;  &nbsp;
+            <span style="font-weight:bold; font-family: Times New Roman">
+                @Html.DisplayNameFor(model => model.Location.Country)
+            </span>
+            &nbsp;
+            @*<span style="border:1px solid black; padding: 3px">*@
+            @Html.DisplayFor(model => model.Location.Country)
+            @*</span>*@
+            &nbsp;&nbsp;
+            <span style="font-weight:bold; font-family: Times New Roman">
+                @Html.DisplayNameFor(model => model.Location.PostalCode)
+            </span>
+            &nbsp;
+            @*<span style="border:1px solid black; padding: 3px">*@
+            @Html.DisplayFor(model => model.Location.PostalCode)
+            @*</span>*@
+            <br /><br />
+            <span style="font-weight:bold; font-family: Times New Roman">
+                @Html.DisplayNameFor(model => model.JobCompensation)
+            </span>
+            &nbsp;
+            @*<span style="border:1px solid black; padding: 3px">*@
+            @Html.DisplayFor(model => model.JobCompensation)
+            @*</span>*@
+            &nbsp; &nbsp;
+            <span style="font-weight:bold; font-family: Times New Roman">
+                @Html.DisplayNameFor(model => model.JobCategory)
+            </span>
+            &nbsp;
+            @*<span style="border:1px solid black; padding: 3px">*@
+            @Html.DisplayFor(model => model.JobCategory)
+            @*</span>*@
+            &nbsp; &nbsp;
+            <span style="font-weight:bold; font-family: Times New Roman">
+                @Html.DisplayNameFor(model => model.JobSubcategory)
+            </span>
+            &nbsp;
+            @*<span style="border:1px solid black; padding: 3px">*@
+            @Html.DisplayFor(model => model.JobSubcategory)
+            @*</span>*@
+            <br /><br />
+                </div>
+            <div class="col-lg-7">
+            <span style="font-weight:bold; font-family: Times New Roman">
+                @Html.DisplayNameFor(model => model.Description)
+                <br />
+            </span>
+            @*<span style="border:1px solid black; padding: 3px">*@
+            @Html.DisplayFor(model => model.Description)
+            @*</span>*@
+            <br /><br />
+            <span style="font-weight:bold; font-family: Times New Roman">
+                @Html.DisplayNameFor(model => model.JobReq)
+            </span>
+            <br />
+            @*<span style="border:1px solid black; padding: 3px">*@
+            @Html.DisplayFor(model => model.JobReq)
+            @*</span>*@
+            <br /><br />
+            <span style="font-weight:bold; font-family: Times New Roman">
+                @Html.DisplayNameFor(model => model.JobDuties)
+            </span>
+            <br />
+            @*<span style="border:1px solid black; padding: 3px">*@
+            @Html.DisplayFor(model => model.JobDuties)
+            @*</span>*@
+                @*</div*@>
+                <br/><br/>
+                @*<div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Apply" class="btn btn-default" />
+                    </div>
+                </div>*@
+        </div>
+        <p>
+            @*@Html.ActionLink("Edit", "Edit", new { id = Model.JobPostId }) |*@
+            @Html.ActionLink("Apply", "Create", "JobApplieds", new { id = Model.JobPostId }, null) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+
+    </div>
+</div>
+    
+@*}*@

@@ -1,0 +1,47 @@
+﻿@model IEnumerable<CapModel.Company>
+
+@{
+    ViewBag.Title = "CompanySearch";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>CompanySearch</h2>
+<br /><br />
+@using (Html.BeginForm())
+{
+    <div>
+@Html.Label("Enter Company Name") &nbsp; @Html.TextBox("Compname") &nbsp;&nbsp;
+<input type="submit" value="Search" class="btn btn-default" />
+        </div>
+<br /><br />
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CompName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CompDescription)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompDescription)
+        </td>      
+        <td>
+            @Html.ActionLink("Details", "Details", new { id=item.CompId }) |
+            @Html.ActionLink("Show News", "ShowNews", "NewsPosts", new { id = item.CompId }, null) |
+            @Html.ActionLink("Search Jobs", "Index", "JobPosting", new { id = item.CompId }, null)
+            
+        </td>
+    </tr>
+}
+
+</table>
+}
+@Html.ActionLink("Back", "Index","JobSeekers") 

@@ -1,0 +1,50 @@
+﻿@model IEnumerable<CapModel.NewsPost>
+@*Main Author Name: Jasmine Gill
+    Description of Page:Index Page to show all News post by a company *@
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("News title")
+        </th>
+        <th>
+            @Html.DisplayName("News Descripition")
+        </th>
+        <th>
+            @Html.DisplayName("Posted on")
+        </th>
+        
+        <th>
+            @Html.DisplayName("Company Name")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NewsDesc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NewsDate)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Company.CompName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.NPId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.NPId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.NPId })
+        </td>
+    </tr>
+}
+
+</table>

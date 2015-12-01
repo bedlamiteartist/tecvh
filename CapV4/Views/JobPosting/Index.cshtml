@@ -1,0 +1,171 @@
+﻿@model IEnumerable<CapModel.JobPosting>
+@*Main Author Name: Amandeep Brar
+    Description of Page:Allows Job Seeker to advanced job search *@
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Scripts{
+    <script>
+        $(function () {
+            $('#advSearch').change(function () {
+                $('#advFeilds').toggle($(this).is(':checked'));
+            });
+
+        });
+    </script>
+}
+<div class="job-search-page">
+    <div class="container">
+        <h2>Job Search </h2>
+
+        @using (Html.BeginForm("Index", "JobPosting", FormMethod.Post))
+        {
+
+
+
+            <div class="col-md-3 col-lg-3 container advanced-search">
+                <div class="form-group label-floating">
+                    <label class="control-label" for="searchText1">Search Jobs</label>
+                    @Html.TextBox("textserach", "", new { @id = "searchText1", @class = "form-control", @type = "text" })&nbsp;
+                </div>
+                <input type="submit" value="Search" class="btn btn-default" />
+                <br />
+                <label class="control-label" for="advSearch"></label>
+
+                <div id="advFeilds">
+                    @*@using (Html.BeginForm("ShowProvinces", "JobPosting", FormMethod.Post))
+                        {*@
+                    @Html.Label("Country") @Html.DropDownList("country", "Select Country") <br />
+                    @*<input type="submit" value="Select Province" class="btn btn-default" />
+                        }
+                        @using (Html.BeginForm("ShowCities", "JobPosting", FormMethod.Post))
+                        {*@
+                    @Html.Label("Province") @Html.DropDownList("province", "Select Province") <br />
+                    @*<input type="submit" value="Select City" class="btn btn-default" />
+                        }*@
+
+                    @Html.Label("City")  @Html.DropDownList("city", "Select City")<br />
+
+                    <br /><br />
+                    @Html.Label("Job Category") &nbsp; @Html.DropDownList("category", "Select Category") &nbsp;&nbsp;<br />
+                    @Html.Label("Subcategory") &nbsp; @Html.DropDownList("subcategory", "Select Subcategory")<br />
+                    <br /><br />
+                    @Html.Label("Job Level :- ") &nbsp; &nbsp; &nbsp;<br />
+                    @*@Html.RadioButton("joblevel", "Student" )*@
+                    <input id="student" name="joblevel" type="radio" value="Student">@Html.Label("Student")&nbsp; &nbsp;<br />
+                    @*@Html.RadioButton("joblevel", "Entry Level")*@
+                    <input id="EntryLevel" name="joblevel" type="radio" value="Entry"> @Html.Label("Entry Level") &nbsp; &nbsp;<br />
+                    @*@Html.RadioButton("joblevel", "Experienced (Non- Manager)")*@
+                    <input id="NonManager" name="joblevel" type="radio" value="Non">@Html.Label("Experienced (Non- Manager)") &nbsp; &nbsp;<br />
+                    @*@Html.RadioButton("joblevel", "Manager")*@
+                    <input id="Manager" name="joblevel" type="radio" value="Manager">@Html.Label("Manager") &nbsp; &nbsp;<br />
+                    @*@Html.RadioButton("joblevel", "Executive")*@
+                    <input id="Executive" name="joblevel" type="radio" value="Executive">@Html.Label("Executive") &nbsp; &nbsp;<br />
+                    @*@Html.RadioButton("joblevel", " Senior - Executive")*@
+                    <input id="seniorExecutive" name="joblevel" type="radio" value="Senior"> @Html.Label("Senior - Executive") &nbsp; &nbsp;<br />
+                    <br /><br />
+                    @Html.Label("Job Type :-")&nbsp; &nbsp; &nbsp;<br />
+                    @*@Html.RadioButton("jobtype", "parttime")*@
+                    <input id="parttime" name="jobtype" type="radio" value="Part"> @Html.Label("Part-time") &nbsp; &nbsp;<br />
+                    @*@Html.RadioButton("jobtype", "fulltime")*@
+                    <input id="fulltime" name="jobtype" type="radio" value="Full"> @Html.Label("Full-time") &nbsp; &nbsp;<br />
+                    @*@Html.RadioButton("jobtype", "Temporary")*@
+                    <input id="Temporary" name="jobtype" type="radio" value="Temporary"> @Html.Label("Temporary/ Contract") &nbsp; &nbsp;<br />
+                    @*@Html.RadioButton("jobtype", "Intern")*@
+                    <input id="Intern" name="jobtype" type="radio" value="Intern"> @Html.Label("Intern") &nbsp; &nbsp;<br />
+                    <br /><br />
+                    @Html.Label("Salary:-")&nbsp; &nbsp;&nbsp;
+                    @Html.CheckBox("salRange1") @Html.Label("$1 - $39,999") &nbsp; &nbsp;<br />
+                    @Html.CheckBox("salRange4") @Html.Label("$40,000 - $49,999") &nbsp; &nbsp;<br />
+                    @Html.CheckBox("salRange5") @Html.Label("$50,000 - $59,999") &nbsp; &nbsp;<br />
+                    @Html.CheckBox("salRange6") @Html.Label("$60,000 - $69,999") &nbsp; &nbsp;<br />
+                    @Html.CheckBox("salRange7") @Html.Label("$70,000 - $79,999") &nbsp; &nbsp;<br />
+                    @Html.CheckBox("salRange8") @Html.Label("$80,000 - $89,999") &nbsp; &nbsp;<br />
+                    @Html.CheckBox("salRange9") @Html.Label("$90,000 - $99,999") &nbsp; &nbsp;<br />
+                    @Html.CheckBox("salRange10") @Html.Label("$100,000 +") &nbsp; &nbsp;<br />
+                    <br /><br />
+                    @Html.Label("Company")&nbsp; @Html.TextBox("companySearch", "", new { placeholder = "Enter company name ..." })&nbsp; &nbsp;&nbsp;<br />
+                    @Html.Label("Title")&nbsp; @Html.TextBox("titleSearch", "", new { placeholder = "Enter job title ..." })&nbsp; &nbsp;&nbsp;<br />
+                    @Html.Label("Posting Date") @*@Html.DropDownList("postingdate", "Select Posting date")*@
+                    <select name="postingdate">
+                        <option value="-1">Select Posting date</option>
+                        <option value="1">Today</option>
+                        <option value="2">Yesterday</option>
+                        <option value="3">Last 3 days</option>
+                        <option value="7">Last 7 days</option>
+                        <option value="14">Last 14 days</option>
+                        <option value="30">Last 30 days</option>
+                    </select>
+                    <br /><br />
+                </div>
+            </div>
+
+            <div class="col-lg-9">
+                @Html.TextArea("result", null, new { @readonly = "readonly" })
+                <table class="table">
+                    <tr>
+                        <th>
+                            @Html.DisplayName("Job Title")
+                        </th>
+                        <th>
+                            @Html.DisplayName("Job Type")
+                        </th>
+                        <th>
+                            @Html.DisplayName("Posting Date")
+                        </th>
+                        <th>
+                            @Html.DisplayName("Closing Date")
+                        </th>
+                        <th>
+                            @Html.DisplayName("Job Level")
+                        </th>
+                        <th>
+                            @Html.DisplayName("Salary")
+                        </th>
+                        <th>
+                            @Html.DisplayName("Company")
+                        </th>
+                        <th>
+                            @Html.DisplayName("Job Category")
+                        </th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.JobTitle)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.JobType)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PostStartDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PostEndDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.JobLevel)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.JobCompensation)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Company.CompName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.JobCategory)
+                            </td>
+                            <td>
+                                @Html.ActionLink("View Job", "Details", new { id = item.JobPostId })
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        }
+    </div>
+</div>

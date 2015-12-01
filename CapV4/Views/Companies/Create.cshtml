@@ -1,0 +1,58 @@
+﻿@model CapModel.Company
+
+@{
+    ViewBag.Title = "Create Profile";
+}
+
+<h2>Create Company Profile</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div >
+      
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    @Html.Label("Name: ")  &nbsp; @Html.TextBox("compName", "", new { placeholder = "Enter Company Name ..." })&nbsp;&nbsp;
+        
+    @Html.Label("User Name")&nbsp;@Html.TextBox("username", "", new { placeholder = "Enter Apartment #" })&nbsp;&nbsp;
+    <br /><br />
+    @Html.Label("Description") &nbsp; @Html.TextArea("description", "", new { placeholder = "Enter goals, objecttives, etc ..." })
+    <br /><br />
+    @Html.Label("Apartment Number")&nbsp;@Html.TextBox("aptNum", "", new { placeholder = "Enter Apartment #" })&nbsp;&nbsp;
+    @Html.Label("Street Adress :- ")&nbsp;@Html.TextBox("streetAdress", "", new { placeholder = "Enter street address ..." })&nbsp;&nbsp;
+    @Html.Label("Postal Code:- ")&nbsp;@Html.TextBox("postalcode", "", new { placeholder = "xxx-xxx" })
+    <br /><br />
+        
+            @Html.Label("Country")
+        &nbsp;
+               @Html.DropDownList("country", "Select Country")
+        &nbsp;&nbsp;
+        
+            @Html.Label("Province")
+        &nbsp;
+                @Html.DropDownList("province", "Select Province")
+        &nbsp;&nbsp;
+        
+            @Html.Label("City")
+        &nbsp;
+                @Html.DropDownList("city", "Select City")
+        &nbsp;&nbsp;
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

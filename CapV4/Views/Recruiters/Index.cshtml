@@ -1,0 +1,74 @@
+﻿@model CapModel.Recruiter
+@*Main Author Name: Jasmine Gill
+    Description of Page:Index Page of a Recruiter, Allows him to navigate to other pages*@
+@{
+    ViewBag.Title = "Recruiter's Home";
+}
+
+        @*<h2>Recruiter Main</h2>*@
+
+        @*@using (Html.BeginForm("Edit", "Recruiter", new { id = "1" }, FormMethod.Get))
+        {
+            <input type="submit" value="Edit Profile" class="btn btn-default" />
+        }
+        <br />
+
+
+        @using (Html.BeginForm("Create", "JobPosting", FormMethod.Get))
+        {
+            <input type="submit" value="Post Jobs" class="btn btn-default" />
+        }
+        <br />
+
+
+        @using (Html.BeginForm("Details", "JobPosting", FormMethod.Get))
+        {
+            <input type="submit" value="Details" class="btn btn-default" />
+        }
+        <br />
+
+
+        @using (Html.BeginForm("SearchUser", "Search", FormMethod.Get))
+        {
+            <input type="submit" value="Search Users" class="btn btn-default" />
+        }*@
+        @using (Html.BeginForm())
+        {
+            <div class="col-md-offset-2 col-md-10">
+                <hr />
+                @Html.TextBox("message", null, new { @readonly = "readonly"})
+                <br /><br />
+                @Html.Label("Confirm Username") &nbsp; @Html.DropDownList("recuiter")
+              
+                <br /><br />
+                @Html.Label("Create Profile") &nbsp;
+                @Html.RadioButton("select", "CreateRec")
+                &nbsp; &nbsp; &nbsp;
+                @Html.Label("Edit Profile") &nbsp;
+                @Html.RadioButton("select", "EditRec")
+                &nbsp; &nbsp; &nbsp;
+                @Html.Label("Post Jobs") &nbsp;
+                @Html.RadioButton("select", "postjobs")
+                &nbsp; &nbsp; &nbsp;
+                @Html.Label("Search Users") &nbsp;
+                @Html.RadioButton("select", "searchusers")
+                &nbsp; &nbsp; &nbsp;
+                @Html.Label("Job Applications") &nbsp;
+                @Html.RadioButton("select", "jobapplied")
+                &nbsp; &nbsp; &nbsp;
+                @Html.Label("Review Job Post") &nbsp;
+                @Html.RadioButton("select", "reviewPosts")
+             
+                <br/><br/>
+               <input type="submit" value="Next" class="btn btn-default" />
+            </div>
+    
+        }
+<br/><br/>
+@*<div class="col-md-offset-2 col-md-10">
+    @using (Html.BeginForm("Create", "JobPosting", FormMethod.Get))
+    {
+        <input type="submit" value="Post Jobs" class="btn btn-default" />
+    }
+    <br />
+    </div>*@

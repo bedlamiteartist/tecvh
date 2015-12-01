@@ -1,0 +1,53 @@
+﻿@model IEnumerable<CapModel.JobSeeker>
+@*Main Author Name: Kulpreet Kaur
+    Description of Page: Show all the job seekers *@
+@{
+    ViewBag.Title = "Index";
+}
+        <h2>Job Seeker</h2>
+
+
+        @*@using (Html.BeginForm("Edit", "JobSeeker", FormMethod.Get))
+        {
+            <input type="submit" value="Edit Profile" class="btn btn-default" />
+        }
+        <br />
+
+        @using (Html.BeginForm("Index", "JobPosting", FormMethod.Get))
+        {
+            <input type="submit" value="Search Jobs" class="btn btn-default" />
+        }
+        <br />
+
+
+        @using (Html.BeginForm("Index", "Video", FormMethod.Get))
+        {
+            <input type="submit" value="Create Video Resume" class="btn btn-default" /> 
+        }*@
+               
+@using (Html.BeginForm())
+{
+    <hr />
+
+    <div class="col-md-offset-2 col-md-10">
+        @Html.Label("Confirm Username") &nbsp; @Html.DropDownList("jobseeker")
+
+        <br /><br />
+        @Html.Label("Create Profile") &nbsp;
+        @Html.RadioButton("select", "CreateJobSeeker")
+        &nbsp;&nbsp;&nbsp;
+        @Html.Label("Edit Profile") &nbsp;
+        @Html.RadioButton("select", "EditJobSeeker")
+        &nbsp;&nbsp;&nbsp;
+        @Html.Label("Search Jobs") &nbsp;
+        @Html.RadioButton("select", "searchJobs")
+        &nbsp;&nbsp;&nbsp;
+        @Html.Label("Company Based Search") &nbsp;
+        @Html.RadioButton("select", "searchComp")
+        &nbsp;&nbsp;&nbsp;
+        @Html.Label("Add Video to your Resume") &nbsp;
+        @Html.RadioButton("select", "videoresume")
+        <br/><br />
+        <input type="submit" value="Next" class="btn btn-default" /> 
+   </div>
+}

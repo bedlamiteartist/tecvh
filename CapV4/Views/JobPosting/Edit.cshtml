@@ -1,0 +1,183 @@
+﻿@model CapModel.JobPosting
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<SelectListItem> VisibleVal = new List<SelectListItem>();
+    VisibleVal.Add(new SelectListItem { Text = "Yes", Value = "Yes" });
+    VisibleVal.Add(new SelectListItem { Text = "No", Value = "No" });
+
+    List<SelectListItem> LevelVal = new List<SelectListItem>();
+    LevelVal.Add(new SelectListItem { Text = "Student", Value = "Student" });
+    LevelVal.Add(new SelectListItem { Text = "Entry Level", Value = "Entry Level" });
+    LevelVal.Add(new SelectListItem { Text = "Experienced (Non-manager)", Value = "Experienced (Non-manager)" }); 
+    LevelVal.Add(new SelectListItem { Text = "Manager", Value = "Manager" });
+    LevelVal.Add(new SelectListItem { Text = "Executive", Value = "Executive" });
+    LevelVal.Add(new SelectListItem { Text = "Senior - Executive", Value = "Senior - Executive" });
+       
+    List<SelectListItem> TypeVal = new List<SelectListItem>();
+    TypeVal.Add(new SelectListItem { Text = "Part-time", Value = "Part-time" });
+    TypeVal.Add(new SelectListItem { Text = "Full-time", Value = "Full-time" });
+    TypeVal.Add(new SelectListItem { Text = "Temporary/Contract", Value = "Temporary/Contract" });
+    TypeVal.Add(new SelectListItem { Text = "Intern", Value = "Intern" });
+    }
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>JobPosting</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.JobPostId)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.JobTitle, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.JobTitle, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.JobTitle, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.JobType, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.JobType, TypeVal)
+                @Html.ValidationMessageFor(model => model.JobType, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PostStartDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PostStartDate, new { htmlAttributes = new { @class = "form-control datepicker", required = "required", type = "date" } })
+                @Html.ValidationMessageFor(model => model.PostStartDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PostEndDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PostEndDate, new { htmlAttributes = new { @class = "form-control datepicker", required = "required", type = "date" } })
+                @Html.ValidationMessageFor(model => model.PostEndDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NumPositions, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NumPositions, new { htmlAttributes = new { @class = "form-control" , type = "number"} })
+                @Html.ValidationMessageFor(model => model.NumPositions, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.JobLevel, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.JobLevel, LevelVal)
+                @Html.ValidationMessageFor(model => model.JobLevel, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.JobCompensation, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.JobCompensation, new { htmlAttributes = new { @class = "form-control", type = "number" } })
+                @Html.ValidationMessageFor(model => model.JobCompensation, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.JobReq, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.JobReq, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.JobReq, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.JobDuties, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.JobDuties, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.JobDuties, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CompanyCompId, "CompanyCompId", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("CompanyCompId", null, htmlAttributes: new { @class = "form-control" , @readonly = "readonly"})
+                @Html.ValidationMessageFor(model => model.CompanyCompId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.RecruiterRecId, "RecruiterRecId", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("RecruiterRecId", null, htmlAttributes: new { @class = "form-control", @readonly = "readonly" })
+                @Html.ValidationMessageFor(model => model.RecruiterRecId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.JobVisible, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.JobVisible, VisibleVal)
+                @Html.ValidationMessageFor(model => model.JobVisible, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.JobCategory, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.JobCategory, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.JobCategory, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.JobSubcategory, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.JobSubcategory, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.JobSubcategory, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+        @*<div>
+            <h4>Location Details</h4>
+            @Html.Label("Apartment Number")&nbsp;@Html.TextBox("aptNum", "", new { placeholder = "Enter Apartment #" })&nbsp;&nbsp;
+            @Html.Label("Street Adress :- ")&nbsp;@Html.TextBox("streetAdress", "", new { placeholder = "Enter street address ..." })&nbsp;&nbsp;
+            @Html.Label("Postal Code:- ")&nbsp;@Html.TextBox("postalcode", "", new { placeholder = "xxx-xxx" })
+            <br /><br />
+            @Html.Label("Country") &nbsp; @Html.DropDownList("country", "Select Country") &nbsp;&nbsp;
+            @Html.Label("Province") &nbsp; @Html.DropDownList("province", "Select Province") &nbsp;&nbsp;
+            @Html.Label("City") &nbsp; @Html.DropDownList("city", "Select City")
+            <br /><hr />
+        </div>*@
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back", "Index", "Recruiters")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

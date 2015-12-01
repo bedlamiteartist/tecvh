@@ -1,0 +1,98 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+.navbar{
+   background-color:rgba(63, 81, 181, 0);
+}
+
+.navbar-brand{
+    color:purple;
+}
+.navbar-inverse{
+    border-color:transparent;
+    color:purple;
+}
+.navbar-inverse .navbar-brand{
+    color:purple;
+}
+.navbar-inverse .navbar-nav>li>a{
+    color:purple;
+}
+.navbar-inverse .navbar-nav>li>a:hover{
+    color:#777;
+}
+.navbar, .navbar.navbar-default {
+    background-color: rgba(63, 81, 181, 0);
+    color: #fff;
+}
+.index-bg{
+    background:url('../Images/1Creep.jpg');
+    background-size:cover;
+    height:100vh;
+    margin-top:-50px;
+}
+.index-tagline{
+    text-align:center;
+    margin-top:15%;
+    color:white;
+}
+#index-tagline-text{
+    font-size:4em;
+}
+.show{
+    background-color:#fff;
+}
+.login-bg{
+    background:url('../Images/2Creep.jpg');
+    background-position:right bottom;
+    background-size:cover;
+    height:100vh;
+    margin-top:-50px;
+}
+.video-bg{
+    background:url('../Images/3Creep.jpg');
+    background-position:right bottom;
+    background-size:cover;
+    height:100vh;
+}
+.common-bg{
+    background:url('../Images/3Creep.jpg');
+    background-size:cover;
+    height:120vh;
+}
+.login-form{
+    margin-top:8%;
+    color:purple;
+}
+.login-tagline{
+    text-align:center;
+    margin-top:-5%;
+    color:white;
+}
+.register-form{
+    margin-top:8%;
+    color:purple;
+}
+.advanced-search{
+    background-color:#eee;
+    box-shadow:rgba(0,0,0,0.4) 0px 0px 10px;
+}
+.job-search-page{
+    background:url('../Images/3Creep.jpg');
+    background-size:cover;
+}
+

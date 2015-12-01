@@ -1,0 +1,69 @@
+﻿@model IEnumerable<CapModel.Company>
+@*Main Author Name: Amandeep Brar
+    Description of Page:Allows Company to access all the features *@
+@{
+    ViewBag.Title = "Index";
+}
+ 
+          
+        @*@using (Html.BeginForm("Create", "Company", FormMethod.Get))
+        { 
+            <input type="submit" value="Create Profile" class="btn btn-default" />
+        }
+        @using (Html.BeginForm("Edit", "Company", FormMethod.Get))
+        {  
+            <input type="submit" value="Edit Profile" class="btn btn-default" />
+        }
+        <br />
+        @using (Html.BeginForm("Create", "NewsPosts", FormMethod.Get))
+        {
+            <input type="submit" value="Post News" class="btn btn-default" />
+        }
+        <br />
+        @using (Html.BeginForm("Index", "NewsPosts", FormMethod.Get))
+        {
+            <input type="submit" value="View All News Post" class="btn btn-default" />
+        }
+        <br />
+        @using (Html.BeginForm("SearchUser", "Search", FormMethod.Get))
+        {
+            <input type="submit" value="Search Users" class="btn btn-default" />
+        }
+        <br />
+        @using (Html.BeginForm("ManageRecruiter", "Company"))
+        {
+            <input type="submit" value="Manager Recruiters" class="btn btn-default" />
+        }*@
+@using (Html.BeginForm())
+{ 
+    <hr />
+
+    <div class ="col-md-offset-2 col-md-10">
+        @Html.Label("Confirm Username") &nbsp; @Html.DropDownList("company")
+
+        <br/><br/>
+        @Html.Label("Create Profile") &nbsp;
+        @Html.RadioButton("select", "CreateComp")
+        &nbsp;&nbsp;&nbsp;
+        @Html.Label("Edit Profile") &nbsp;
+        @Html.RadioButton("select", "EditComp")
+        &nbsp;&nbsp;&nbsp;
+        @Html.Label("Post News") &nbsp;
+        @Html.RadioButton("select", "CreateNews")
+        &nbsp;&nbsp;&nbsp;
+        @Html.Label("Show News") &nbsp;
+        @Html.RadioButton("select", "ShowNews")
+        &nbsp;&nbsp;&nbsp;
+        @Html.Label("Search User") &nbsp;
+        @Html.RadioButton("select", "SearchUser")
+        &nbsp;&nbsp;
+        @Html.Label("Manage Recruiter") &nbsp;
+        @Html.RadioButton("select", "ManageRecruiter")
+        <br /><br/>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Next" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}

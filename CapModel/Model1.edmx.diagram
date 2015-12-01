@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="230318b3e3f4407cbe16bc04ba82ff20" Name="Diagram1" ZoomLevel="100" >
+        <EntityTypeShape EntityType="Model1.Location" Width="1.5" PointX="1" PointY="0.5" />
+        <EntityTypeShape EntityType="Model1.Recruiter" Width="1.5" PointX="5.375" PointY="7.125" />
+        <EntityTypeShape EntityType="Model1.JobSeeker" Width="1.5" PointX="0.875" PointY="7.5" />
+        <AssociationConnector Association="Model1.JobSeekerLocation" />
+        <EntityTypeShape EntityType="Model1.SkillCollection" Width="1.5" PointX="5.875" PointY="19.625" />
+        <EntityTypeShape EntityType="Model1.Certification" Width="1.5" PointX="0.625" PointY="25.125" />
+        <AssociationConnector Association="Model1.JobSeekerCertification" />
+        <EntityTypeShape EntityType="Model1.Education" Width="1.5" PointX="1.25" PointY="14.25" />
+        <AssociationConnector Association="Model1.JobSeekerEducation" />
+        <EntityTypeShape EntityType="Model1.WorkExperience" Width="1.5" PointX="0.625" PointY="18.75" />
+        <AssociationConnector Association="Model1.JobSeekerWorkExperience" />
+        <EntityTypeShape EntityType="Model1.Company" Width="1.5" PointX="3.5" PointY="0.5" />
+        <AssociationConnector Association="Model1.CompanyRecruiter" />
+        <EntityTypeShape EntityType="Model1.Follower" Width="1.5" PointX="10.375" PointY="2.25" />
+        <EntityTypeShape EntityType="Model1.NewsPost" Width="1.5" PointX="4.5" PointY="13.625" />
+        <AssociationConnector Association="Model1.CompanyNewsPost" />
+        <EntityTypeShape EntityType="Model1.JobPosting" Width="1.5" PointX="7.125" PointY="0.5" />
+        <AssociationConnector Association="Model1.CompanyJobPosting" />
+        <AssociationConnector Association="Model1.RecruiterJobPosting" />
+        <EntityTypeShape EntityType="Model1.UserMedia" Width="1.5" PointX="7.75" PointY="13" />
+        <AssociationConnector Association="Model1.JobSeekerUserMedia" />
+        <EntityTypeShape EntityType="Model1.UserProfile" Width="1.5" PointX="3.125" PointY="18.25" />
+        <AssociationConnector Association="Model1.JobPostingUserMedia" />
+        <AssociationConnector Association="Model1.CompanyUserMedia" />
+        <EntityTypeShape EntityType="Model1.JobApplied" Width="1.5" PointX="7.875" PointY="7.25" />
+        <AssociationConnector Association="Model1.JobPostingJobApplied" />
+        <AssociationConnector Association="Model1.JobSeekerJobApplied" />
+        <AssociationConnector Association="Model1.JobPostingLocation" />
+        <AssociationConnector Association="Model1.JobSeekerSkillCollection" />
+        <EntityTypeShape EntityType="Model1.JobCategory" PointX="10.25" PointY="0.5" Width="1.5" />
+        <EntityTypeShape EntityType="Model1.Country" Width="1.5" PointX="10.25" PointY="4.75" />
+        <AssociationConnector Association="Model1.JobSeekerUserProfile" />
+        <AssociationConnector Association="Model1.CompanyLocation1" />
+        <AssociationConnector Association="Model1.RecruiterLocation" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

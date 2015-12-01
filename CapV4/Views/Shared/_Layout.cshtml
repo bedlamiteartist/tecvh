@@ -1,0 +1,81 @@
+﻿@*Main Author Name: Karandeep Karandeep
+    Description of Page:  Controls the Layout File of the entire Application*@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/bootstrap-material-design.min.css" rel="stylesheet" />
+    <link href="~/Content/ripples.min.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("InterviewTube", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Recruiter", "Index", "Recruiters")</li>
+                    <li>@Html.ActionLink("Job Seeker", "Index", "JobSeekers")</li>
+                    <li>@Html.ActionLink("Company", "Index", "Companies")</li>
+                    <li>@Html.ActionLink("Video", "Index", "Video")</li>
+                    
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="">
+        @RenderBody()
+        <hr />
+        </div>
+    <div class="body-content container">
+        <footer>
+            <p>&copy; @DateTime.Now.Year - InterviewTube</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script>
+        $(window).scroll(function () {
+            // 100 = The point you would like to fade the nav in.
+
+            if ($(window).scrollTop() > 20) {
+
+                $('.navbar-inverse').addClass('show');
+
+            } else {
+
+                $('.navbar-inverse').removeClass('show');
+
+            };
+        });
+
+        $('.scroll').on('click', function (e) {
+            e.preventDefault()
+
+            $('html, body').animate({
+                scrollTop: $(this.hash).offset().top
+            }, 1500);
+        });
+    </script>
+        @RenderSection("scripts", required: false)
+    <script src="~/Scripts/material.min.js"></script>
+    <script src="~/Scripts/ripples.min.js"></script>
+</body>
+</html>

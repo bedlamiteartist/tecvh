@@ -1,0 +1,51 @@
+﻿@model CapModel.JobApplied
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>JobApplied</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicationDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AppliedMessage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AppliedMessage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JobPosting.JobTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobPosting.JobTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JobSeeker.SkillSummary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobSeeker.SkillSummary)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.JobAppId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

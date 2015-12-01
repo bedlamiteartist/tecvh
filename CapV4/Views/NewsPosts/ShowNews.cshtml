@@ -1,0 +1,40 @@
+﻿@model IEnumerable<CapModel.NewsPost>
+
+@{
+    ViewBag.Title = "ShowNews";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ShowNews</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NewsDesc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NewsDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NewsDesc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NewsDate)
+        </td>
+    </tr>
+}
+
+</table>
+
+@Html.ActionLink("Back", "CompanySearch", "Companies") 

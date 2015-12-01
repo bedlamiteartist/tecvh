@@ -1,0 +1,33 @@
+﻿@model CapModel.Company
+@*Main Author Name: Amandeep Brar
+    Description of Page:Displays information of selected company *@
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Company</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CompName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CompName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CompDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CompDescription)
+        </dd>
+
+    </dl>
+</div>
+
+@Html.ActionLink("Back", "Index", "JobSeekers") 

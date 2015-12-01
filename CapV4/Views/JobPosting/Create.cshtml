@@ -1,0 +1,64 @@
+﻿@model CapModel.JobPosting
+@*Main Author Name: Amandeep Brar
+    Description of Page:Allows recruiter to post new job *@
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="common-bg">
+    <div class="container">
+        <h2>Post Jobs!!</h2>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+
+
+        <div>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            @Html.Label("Job Title: ")  &nbsp; @Html.TextBox("jobtitle", "", new { placeholder = "Enter Job Title", required = "required" }) &nbsp; &nbsp;
+            @Html.Label("Company Name: ")  &nbsp; @Html.DropDownList("company", "Select Company")
+            @Html.Label("Conifrm Recruiter Name: ")  &nbsp; @Html.DropDownList("recruiter", "Select Username")
+            <br /><br />
+            @Html.Label("Number of Positions:- ") &nbsp; @Html.TextBox("positions", "", new { placeholder = "# of positions", required = "required", type = "number" })
+            @Html.Label("Job Level:- ")&nbsp; @Html.DropDownList("level", "Select job level")
+            @Html.Label("Job Type:- ")&nbsp; @Html.DropDownList("type", "Select Job type")
+            <br /><br />
+            @Html.Label("Posting Start date: ")  &nbsp; @Html.TextBox("postingdate", "", new { @class = "form-control datepicker", required = "required", type = "date" })&nbsp;
+            @Html.Label("Posting End date: ")  &nbsp; @Html.TextBox("closingdate", "", new { @class = "form-control datepicker", required = "required", type = "date" })
+            <br /><br />
+            @Html.Label("Salary : ")  &nbsp; @Html.TextBox("jobCompensation", "", new { placeholder = "Enter Job Salary", required = "required", type = "number" }) &nbsp; &nbsp;
+            @Html.Label("Job Category") &nbsp; @Html.DropDownList("category", "Select Category") &nbsp;&nbsp;
+            @Html.Label("Subcategory") &nbsp; @Html.DropDownList("subcategory", "Select Subcategory")
+            <br /><hr />
+            <h4>Location Details</h4>
+            @Html.Label("Apartment Number")&nbsp;@Html.TextBox("aptNum", "", new { placeholder = "Enter Apartment #" })&nbsp;&nbsp;
+            @Html.Label("Street Adress :- ")&nbsp;@Html.TextBox("streetAdress", "", new { placeholder = "Enter street address ..." })&nbsp;&nbsp;
+            @Html.Label("Postal Code:- ")&nbsp;@Html.TextBox("postalcode", "", new { placeholder = "xxx-xxx" })
+            <br /><br />
+            @Html.Label("Country") &nbsp; @Html.DropDownList("country", "Select Country") &nbsp;&nbsp;
+            @Html.Label("Province") &nbsp; @Html.DropDownList("province", "Select Province") &nbsp;&nbsp;
+            @Html.Label("City") &nbsp; @Html.DropDownList("city", "Select City")
+            <br /><hr />
+            @Html.Label("Description: ")  &nbsp; @Html.TextArea("jobdesciption", "", new { placeholder = "Enter Job Desciption..", required = "required" })
+            <br /><br />
+            @Html.Label("Requirements: ")  &nbsp; @Html.TextArea("jobRequirements", "", new { placeholder = "Enter Job requirements..", required = "required" })
+            <br /> <br />
+            @Html.Label("Job Duties: ")  &nbsp; @Html.TextArea("jobDuties", "", new { placeholder = "Enter Job Duties...", required = "required" })
+            @Html.Label("Select to display job on wall") &nbsp; @Html.CheckBox("showJob")
+            <br /><br />
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    }
+    <div>
+        @Html.ActionLink("Back", "Index", "Recruiters")
+    </div>
+    </div>
+    </div>
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }

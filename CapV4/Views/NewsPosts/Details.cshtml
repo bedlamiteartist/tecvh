@@ -1,0 +1,59 @@
+﻿@model CapModel.NewsPost
+@*Main Author Name: Jasmine Gill
+    Description of Page: Shows details of selected news post *@
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>NewsPost</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NewsDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NewsDesc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NewsDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NewsDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsVisible)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsVisible)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Company.CompName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Company.CompName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.NPId }) |
+    @Html.ActionLink("Back", "Index", "Companies")
+</p>
