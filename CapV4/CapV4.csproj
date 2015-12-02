@@ -190,6 +190,10 @@
     <Content Include="Images\2Creep.jpg" />
     <Content Include="Images\3Creep.jpg" />
     <Content Include="Images\4Creep.png" />
+    <Content Include="Images\5Creep.png" />
+    <Content Include="Images\8Creep.jpg" />
+    <Content Include="Images\Logo-IT-2.png" />
+    <Content Include="Images\logo.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />

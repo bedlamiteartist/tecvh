@@ -6,8 +6,6 @@ Description of Page:Allows User to Register*@
     ViewBag.Title = "Register";
 }
 <div class="login-bg">
-    <br />
-    <br />
     <div class="container register-form">
 <h2>@ViewBag.Title.</h2>
 
@@ -54,10 +52,8 @@ Description of Page:Allows User to Register*@
         <div class="col-md-10">
             @Html.RadioButtonFor(m => m.UserType, "R")
             @Html.Label("Recruiter")           
-            <br />
             @Html.RadioButtonFor(m => m.UserType, "J")
             @Html.Label("Job Seeker")   
-            <br />
             @Html.RadioButtonFor(m => m.UserType, "C")
             @Html.Label("Company")  
        
@@ -65,7 +61,7 @@ Description of Page:Allows User to Register*@
    </div>
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Register" />
+            <input type="submit" class="btn btn-raised btn-default" value="Register" />
         </div>
     </div>
 }

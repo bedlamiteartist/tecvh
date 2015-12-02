@@ -16,40 +16,36 @@ select,
 textarea {
     max-width: 280px;
 }
-/*.navbar-brand{
-    color:purple;
+.navbar-brand{
+    background: url('../Images/Logo-IT-2.png') no-repeat;
+    background-size: 193px 50px;
+    height:50px;
+    width:200px;
 }
-.navbar-inverse{
-    border-color:transparent;
-    color:purple;
+#nav-bar
+{
+    padding-top:8px;
+    padding-bottom:8px;
 }
-.navbar-inverse .navbar-brand{
-    color:purple;
-}
-.navbar-inverse .navbar-nav>li>a{
-    color:purple;
-}
+
 .navbar-inverse .navbar-nav>li>a:hover{
     color:#777;
 }
 .navbar, .navbar.navbar-default {
-    background-color:purple;
     color: #fff;
 }
-.navbar{
-   background-color:#eee;
-}*/
 .navbar.navbar-inverse {
-    background-color: #542437;
-    color: #fff;
+    background-color: #fff;
+    color: #542437;
 }
 
 .form-group .form-control {
 }
 
 .index-bg {
-    background: url('../Images/4Creep.png');
+    background: url('../Images/6Creep.png');
     background-size: cover;
+    background-position:top;
     height: 100vh;
     margin-top: -50px;
 }
@@ -60,7 +56,7 @@ textarea {
     font-weight: 700;
     text-align: center;
     margin-top: 15%;
-    color: #C02942;
+    color: #4b1b2e;
 }
 
 #index-tagline-text {
@@ -72,7 +68,7 @@ textarea {
 }
 
 .login-bg {
-    background: url('../Images/2Creep.jpg');
+    background: url('../Images/8Creep.png');
     background-position: right bottom;
     background-size: cover;
     height: 100vh;
@@ -116,4 +112,10 @@ textarea {
 .job-search-page {
     /*background:url('../Images/3Creep.jpg');*/
     background-size: cover;
+}
+.form-group label.control-label{
+    color:#545454;
+}
+.form-group .checkbox label, .form-group .radio label, .form-group label{
+    color:#545454;
 }

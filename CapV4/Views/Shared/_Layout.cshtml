@@ -15,25 +15,24 @@
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
+        <div class="container" id="nav-bar">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("InterviewTube", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink(" ", "Index", "Home", new { area = "" }, new { @class = "navbar-brand"})
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    @*<li>@Html.ActionLink("Home", "Index", "Home")</li>*@
                     <li>@Html.ActionLink("Recruiter", "Index", "Recruiters")</li>
                     <li>@Html.ActionLink("Job Seeker", "Index", "JobSeekers")</li>
                     <li>@Html.ActionLink("Company", "Index", "Companies")</li>
                     <li>@Html.ActionLink("Video", "Index", "Video")</li>
-                    
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -74,11 +73,12 @@
             }, 1500);
         });
     </script>
+    <script src="https://use.typekit.net/pgw1jal.js"></script>
+    <script>try { Typekit.load({ async: true }); } catch (e) { }</script> 
     @RenderSection("scripts", required: false)
     <script src="~/Scripts/ripples.min.js"></script>
     <script src="~/Scripts/material.min.js"></script>
-    <script src="https://use.typekit.net/pgw1jal.js"></script>
-    <script>try { Typekit.load({ async: true }); } catch (e) { }</script>  
+     
     <script>$.material.init()</script>
     
     
