@@ -1,0 +1,179 @@
+﻿@model CapModel.JobSeeker
+
+@{
+    ViewBag.Title = "Create";
+
+}
+<div class="container">
+    <h2>  </h2>
+
+
+    @using (Html.BeginForm(new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+        <hr />
+        <div class="row">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="col-lg-4 col-md-6">
+                <div class="form-group label-floating">
+                    @Html.Label("Select your username", new { @class = "control-label", @for = "lbl-username" })
+                    @Html.TextBox("Username", "", new { @class = "form-control", @type = "text", @id = "lbl-username" })
+                </div>
+                <div class="form-group label-floating">
+                    @Html.Label("Phone Number", new { @class = "control-label" })
+                    @Html.TextBox("Phonenumber", "", new { @class = "form-control", @type = "text" })
+
+                    @*@Html.DropDownList("Username", "Select username")*@
+                </div>
+
+                <div class="form-group label-floating">
+                    @Html.Label("Summary : ", new { @class = "control-label", @for = "lbl-summary" })
+                    @Html.TextArea("skillSummary", "", new { @class = "form-control", @type = "text", @id = "lbl-summary" })
+                </div>
+            </div>
+            <div class="col-lg-8">
+
+                <h2>@Html.Label("Education Achievements: ", new { @class = "job-labels" })</h2>
+                <div class="form-group label-floating">
+                    @Html.Label("Course Name: ", new { @class = "control-label" })
+                    @Html.TextBox("courseName", "", new { @class = "form-control", @type = "text" })
+                </div>
+                <div class="form-group label-floating">
+                    @Html.Label("Name of School : ", new { @class = "control-label" })
+                    @Html.TextBox("schoolName", "", new { @class = "form-control", @type = "text" })
+                </div>
+                <div class="form-group label-floating">
+                    @Html.Label("Location of School : ", new { @class = "control-label" })
+                    @Html.TextBox("eduLocation", "", new { @class = "form-control", @type = "text" })
+                </div>
+                <div class="form-group label-floating">
+                    @Html.Label("Start Date : "@*, new { @class = "control-label" }*@)
+                    @Html.TextBox("eduStartDate", "", new { @class = "form-control", required = "required", type = "date" })
+                </div>
+                <div class="form-group label-floating">
+                    @Html.Label("End Date : "@*, new { @class = "control-label" }*@)
+                    @Html.TextBox("eduEndDate", "", new { @class = "form-control", required = "required", type = "date" })
+                </div>
+                <div class="form-group label-floating">
+
+                    @Html.Label("Description : ", new { @class = "control-label" })
+                    @Html.TextArea("eduDescription", "", new { @class = "form-control" })
+                </div>
+                <div class="form-group label-floating">
+                    @Html.Label("Grades : ", new { @class = "control-label" })
+                    @Html.TextBox("eduGrade", "", new { @class = "form-control", @type = "text" })
+                </div>
+
+            </div>
+
+            <br /><br />
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div>
+                    <h1>@Html.Label("Work Experience", new { @class = "job-labels" })</h1>
+                    <div class="form-group label-floating">
+                        @Html.Label("Name of Company : ", new { @class = "control-label" })
+                        @Html.TextBox("companyName", "", new { @class = "form-control", @type = "text" })
+                    </div>
+                    <div class="form-group label-floating">
+                        @Html.Label("Job Title : ", new { @class = "control-label" })
+                        @Html.TextBox("jobTitle", "", new { @class = "form-control", @type = "text" })
+                    </div>
+                    <div class="form-group label-floating">
+                        @Html.Label("Location : ", new { @class = "control-label" })
+                        @Html.TextBox("jobLocation", "", new{ @*placeholder = "Enter location of job",*@ @class = "form-control", @type = "text"})
+                    </div>
+                    <div class="form-group label-floating">
+                        @Html.Label("Job Start Date : ")
+                        @Html.TextBox("jobStartDate", "", new
+                   { @*placeholder = "Enter date of start",*@ required = "required",
+                    type = "date"
+                   })
+                    </div>
+                    <div class="form-group label-floating">
+                        @Html.Label("Job End Date : ")
+                        @Html.TextBox("jobEndDate", "", new { placeholder = "Enter date of ending", required = "required", type = "date" })
+                    </div>
+                    <div class="form-group label-floating">
+                        @Html.Label("Job Summary : ", new { @class = "control-label" })
+                        @Html.TextArea("jobSummary", "", new { @class = "form-control", @type = "text" })
+
+                    </div>
+                </div>
+                <br />
+                <div>
+                    @Html.Label("Certifications")
+
+                    @Html.Label("Name of certification: ") &nbsp; @Html.TextBox("certName", "", new { placeholder = "Name of certification" }) &nbsp; &nbsp;
+                    @Html.Label("Issued by: ") &nbsp; @Html.TextBox("certAuthority", "", new { placeholder = "Authority name" }) &nbsp; &nbsp;
+                    @Html.Label("Licence Number: ") &nbsp; @Html.TextBox("certLicence", "", new { placeholder = "Licence num" }) &nbsp; &nbsp;
+                    @Html.Label("Date of issue : ")  &nbsp; @Html.TextBox("certDate", "", new { placeholder = "Enter date of issue", required = "required", type = "date" })&nbsp;&nbsp;
+
+                </div>
+                <br /><br />
+                <div>
+                    @Html.Label("Add your skills")
+                    <br />
+                    @Html.TextBox("SkillName")
+                    @*@Html.DropDownList("SkillName", "Select your skills")*@
+                </div>
+
+                @*<div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="button" value="AddWork" class="btn btn-default" />
+                        </div>
+                    </div>*@
+
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-raised btn-default" />
+            </div>
+        </div>
+
+    }
+
+
+    @using (Html.BeginForm("Upload", "JobSeekers", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <input type="file" name="file" id="file" />
+        <input type="submit" name="submitButton" value="Save" />
+    }
+
+
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+
+
+</div>
+
+@section Scripts{
+    <script>
+        var $searchBox = $("#skillName");
+        $searchBox.autocomplete({
+            source: function (request, response) {
+                var skills = new Array();
+                $.ajax({
+                    url: "@(Url.Action("AutocompleteSuggestions", "JobSeekers"))",
+                    type: "POST",
+                    dataType: "json",
+                    data: { term: request.term },
+                    success: function (data) {
+                        for (var i = 0; i < data.length ; i++) {
+                            skills[i] = { label: data[i].Value, Id: data[i].Key }
+                        }
+                    }
+
+                });
+                response(skills);
+            },
+
+        });
+
+
+    </script>
+}
