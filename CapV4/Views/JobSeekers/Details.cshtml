@@ -8,7 +8,6 @@
 
 <div class="">
     <div class="container">
-        <h3>JobSeeker</h3>
         <hr />
         <div class="row">
             <div class="col-lg-5">
@@ -21,7 +20,7 @@
                 @*<span style="font-weight:bold; ">
                         @Html.Label("User Name")
                     </span>*@
-                <h2>@Html.DisplayFor(model => model.UserName)</h2>
+                <h1 style="color: #542437;font-weight:400">@Html.DisplayFor(model => model.UserName)</h1>
                 <br /><br />
                 <span style="font-weight:bold; ">
                     @Html.Label("Phone Number")
@@ -39,8 +38,7 @@
                 </h2>
                 @Html.DisplayFor(model => model.SkillSummary)
                 <br /><hr />
-                <h2>@Html.Label("Work Experiences: ", new { @class = "job-labels" })</h2>
-                <hr />
+                <h2>@Html.Label("Work Experiences: ", new { @class = "job-labels" })</h2><br />
                 @foreach (var q in Model.WorkExperiences)
                 {
 
