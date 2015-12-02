@@ -194,8 +194,10 @@
     <Content Include="Images\8Creep.jpg" />
     <Content Include="Images\Logo-IT-2.png" />
     <Content Include="Images\logo.png" />
+    <Content Include="ProfileVideo\videos-1.mp4" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ProfileVideo\capture.webm" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -277,12 +279,12 @@
     <Content Include="Views\JobPosting\JobPosts.cshtml" />
     <Content Include="Views\Companies\CompanySearch.cshtml" />
     <Content Include="Views\NewsPosts\ShowNews.cshtml" />
+    <Content Include="Views\JobSeekers\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\App_LocalResources\" />
     <Folder Include="ProfilePic\" />
-    <Folder Include="ProfileVideo\" />
     <Folder Include="Scripts\App_LocalResources\" />
   </ItemGroup>
   <ItemGroup>

@@ -119,3 +119,6 @@ textarea {
 .form-group .checkbox label, .form-group .radio label, .form-group label{
     color:#545454;
 }
+.job-labels{
+    font-size:inherit;
+}

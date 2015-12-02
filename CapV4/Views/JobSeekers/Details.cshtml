@@ -1,59 +1,134 @@
 ﻿@model CapModel.JobSeeker
-@*Main Author Name: Kulpreet Kaur
-    Description of Page:Show all the details of the job seeker based on ID *@
+
 @{
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2> </h2>
 
-<div>
-    <h4>JobSeeker</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.SkillSummary)
-        </dt>
+<div class="">
+    <div class="container">
+        <h3>JobSeeker</h3>
+        <hr />
+        <div class="row">
+            <div class="col-lg-5">
+                <video width="400" controls>
+                    <source src="~/ProfileVideo/videos-1.mp4" type="video/mp4">
+                    <source src="~/ProfileVideo/capture.ogg" type="video/ogg">
+                    Your browser does not support HTML5 video.
+                </video>
 
-        <dd>
-            @Html.DisplayFor(model => model.SkillSummary)
-        </dd>
+                @*<span style="font-weight:bold; ">
+                        @Html.Label("User Name")
+                    </span>*@
+                <h2>@Html.DisplayFor(model => model.UserName)</h2>
+                <br /><br />
+                <span style="font-weight:bold; ">
+                    @Html.Label("Phone Number")
+                </span>
+                @Html.DisplayFor(model => model.PhoneNumber)
+                <br /><br />
+                <h6>Upload File for your resume</h6>
+                <input type="file" />
+            </div>
+            <div class="col-lg-7">
+                <h2>
+                    <span style="font-weight:bold; ">
+                        @Html.Label("Skill Summary", new { @class = "job-labels" })
+                    </span>
+                </h2>
+                @Html.DisplayFor(model => model.SkillSummary)
+                <br /><hr />
+                <h2>@Html.Label("Work Experiences: ", new { @class = "job-labels" })</h2>
+                <hr />
+                @foreach (var q in Model.WorkExperiences)
+                {
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PhoneNumber)
-        </dt>
+                    <span style="font-weight:bold; ">
+                        @Html.DisplayNameFor(model => q.ExpTitle)
+                    </span>
+                    @Html.DisplayFor(model => q.ExpTitle)
 
-        <dd>
-            @Html.DisplayFor(model => model.PhoneNumber)
-        </dd>
+                    <br /><br />
+                    <span style="font-weight:bold; ">
+                        @Html.DisplayNameFor(model => q.ExpCompany)
+                    </span>
+                    @Html.DisplayFor(model => q.ExpCompany)
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Visibility)
-        </dt>
+                    <br /><br />
+                    <span style="font-weight:bold; ">
+                        @Html.DisplayNameFor(model => q.ExpLocation)
+                    </span>
+                    @Html.DisplayFor(model => q.ExpLocation)
 
-        <dd>
-            @Html.DisplayFor(model => model.Visibility)
-        </dd>
+                    <br /><br />
+                    <span style="font-weight:bold; ">
+                        @Html.DisplayNameFor(model => q.ExpStartDate)
+                    </span>
+                    @Html.DisplayFor(model => q.ExpStartDate)
 
-        <dt>
-            @Html.DisplayNameFor(model => model.UserName)
-        </dt>
+                    <br /><br />
+                    <span style="font-weight:bold; ">
+                        @Html.DisplayNameFor(model => q.ExpEndDate)
+                    </span>
+                    @Html.DisplayFor(model => q.ExpEndDate)
 
-        <dd>
-            @Html.DisplayFor(model => model.UserName)
-        </dd>
+                    <br /><br />
+                    <span style="font-weight:bold; ">
+                        @Html.DisplayNameFor(model => q.ExpSummary)
+                    </span>
+                    @Html.DisplayFor(model => q.ExpSummary)
+                    <br /><br />
+                }
+                <hr />
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Location.AptNum)
-        </dt>
+                <h2>@Html.Label("Education: ", new { @class = "job-labels" })</h2><br />
+                @foreach (var q in Model.Educations)
+                {
 
-        <dd>
-            @Html.DisplayFor(model => model.Location.AptNum)
-        </dd>
+                    <span style="font-weight:bold; ">
+                        @Html.DisplayNameFor(model => q.SchoolName)
+                    </span>
+                    @Html.DisplayFor(model => q.SchoolName)
+                    <br /><br />
 
-    </dl>
+                    <span style="font-weight:bold; ">
+                        @Html.DisplayNameFor(model => q.EduDescription)
+                    </span>
+                    @Html.DisplayFor(model => q.EduDescription)
+                    <br /><br />
+
+                    <span style="font-weight:bold; ">
+                        @Html.DisplayNameFor(model => q.EduStartDate)
+                    </span>
+                    @Html.DisplayFor(model => q.EduStartDate)
+                    <br /><br />
+
+                    <span style="font-weight:bold; ">
+                        @Html.DisplayNameFor(model => q.EduEndDate)
+                    </span>
+                    @Html.DisplayFor(model => q.EduEndDate)
+                    <br /><br />
+
+                    <span style="font-weight:bold; ">
+                        @Html.DisplayNameFor(model => q.EduLocation)
+                    </span>
+                    @Html.DisplayFor(model => q.EduLocation)
+                    <br /><br />
+
+                    <span style="font-weight:bold; ">
+                        @Html.DisplayNameFor(model => q.EduGrade)
+                    </span>
+                    @Html.DisplayFor(model => q.EduGrade)
+                    <br /><br />
+                    <hr />
+
+                }
+            </div>
+        </div>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.JSId }) |
+        @Html.ActionLink("Back", "Index")
+    </p>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.JSId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
